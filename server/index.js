@@ -24,6 +24,25 @@ app.get("/", (req, res) => {
     .catch(err => res.json(err))
 })
 
+//Get User ID
+app.get("/getuser/:id", (req, res) => {
+    const id = req.params.id
+    UserModel.findById({_id:id})  //Associamos o id do DB a const que criamos acima que pega o id da URL
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+})
+
+//Update user
+app.put('/updateuser/:id', (req,res) => {
+    const id = req.params.id;
+    UserModel.findByIdAndUpdate({_id: id}, {
+        name: req.body.name, 
+        email: req.body.email, 
+        age: req.body.age})
+    .then(users => res.json(users))
+    .catch(err => res.json(err))
+})
+
 //Create user Route:
 app.post("/createuser", (req, res) => {
     UserModel.create(req.body) //Fazemos a requisicao do BODY na do nosso modelo de user do DB
