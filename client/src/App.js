@@ -4,7 +4,6 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import User from "./User";
 import UpdateUser from "./UpdateUser";
 import CreateUser from "./CreateUser";
-import DeleteUser from "./DeleteUser";
 
 
 function App() {
@@ -14,7 +13,6 @@ function App() {
         <Route path="/" element={<User/>}></Route>
         <Route path="/create" element={<CreateUser/>}></Route>
         <Route path="/update/:id" element={<UpdateUser/>}></Route>
-        <Route path="/delete" element={<DeleteUser/>}></Route>
       </Routes>
     </BrowserRouter>
   </div>

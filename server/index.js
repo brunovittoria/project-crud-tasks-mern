@@ -35,11 +35,19 @@ app.get("/getuser/:id", (req, res) => {
 //Update user
 app.put('/updateuser/:id', (req,res) => {
     const id = req.params.id;
-    UserModel.findByIdAndUpdate({_id: id}, {
+    UserModel.findByIdAndUpdate({_id : id}, {
         name: req.body.name, 
         email: req.body.email, 
         age: req.body.age})
     .then(users => res.json(users))
+    .catch(err => res.json(err))
+})
+
+//Delete User
+app.delete('/deleteuser/:id', (req, res) => {
+    const id = req.params.id
+    UserModel.findByIdAndDelete({_id : id})
+    .then(res => res.json(res))
     .catch(err => res.json(err))
 })
 
