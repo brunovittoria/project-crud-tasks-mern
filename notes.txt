@@ -1,0 +1,24 @@
+PAREI NO 21:18
+
+COMMANDS FRONTEND:
+
+npx create-react-app
+npm install bootstrap axios react-router-dom
+
+Rodar FRONTEND:
+
+npm start
+
+COMMANDS BACKEND:
+
+npm init -y
+npm i express mongoose cors nodemon 
+
+Added to package.json: 
+"scripts": {
+    "start": "nodemon index.js"
+  },
+
+Rodar BACKEND:
+
+npm start
